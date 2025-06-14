@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Jut.su AutoPlayer",
+  "version": "1.0",
+  "description": "Автоматически включает видео, пропускает заставку и переходит к следующей серии на jut.su",
+  "permissions": ["scripting", "storage", "tabs", "activeTab"],
+  "host_permissions": ["*://*.jut.su/*", "file:///*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; font-src https://fonts.gstatic.com"
+  }
+}
